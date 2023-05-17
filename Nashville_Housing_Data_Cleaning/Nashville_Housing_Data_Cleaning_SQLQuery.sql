@@ -113,12 +113,12 @@ WITH RowNumCTE AS(
 SELECT *,
 	ROW_NUMBER() OVER(
 	PARTITION BY ParcelID,
-				 PropertyAddress,
-				 SalePrice,
-				 LegalReference
-				 ORDER BY
-					UniqueID
-					) row_num
+		 PropertyAddress,
+		 SalePrice,
+		 LegalReference
+		 ORDER BY
+			UniqueID
+				) row_num
 FROM Nashville_Housing_Project..Nashville_Housing)
 DELETE
 FROM RowNumCTE
